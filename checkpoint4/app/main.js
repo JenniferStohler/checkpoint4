@@ -1,4 +1,4 @@
-import ValuesController from "./Controllers/ValuesController.js";
+import ValuesController from "./Controllers/InspiresController.js";
 import ToDosController from "./Controllers/ToDosController.js";
 import ImagesController from "./Controllers/ImagesController.js";
 import WeatherController from "./Controllers/WeatherController.js";
@@ -8,7 +8,7 @@ class App {
 
   toDosController = new ToDosController();
 
-  imageController = new ImagesController();
+  imagesController = new ImagesController();
 
   weatherController = new WeatherController();
 

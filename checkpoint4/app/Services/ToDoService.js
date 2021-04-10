@@ -11,24 +11,29 @@ class ToDoService {
     console.log("hi")
   }
   
-  asnyc getTodos(){
+  async getToDos(){
     let res = await sandboxApi.get('Gwen/todos');
-    ProxyState.todos= res.data.map(t => new Todo(t))
+    ProxyState.todos= res.data.map(t => new ToDo(t))
   }
 
   async completeToDo(id){
     let toDoCheck = ProxyState.todos.find(t => t.id === id)
     if(toDoCheck.completed){
       await sandboxApi.put('Gwen/todos/' + id, {completed: false})
-    }
-
+      toDoCheck.completed = false
+    } else {
+        await sandboxApi.put('Gwen/todos/' + id, {completed: true})
+        toDoCheck.completed = true
+      }
   }
+
   
+
   
-  async deleteToDo(id){
+  async deleteToDos(id){
     if(window.confirm('Are You Sure You Want To Delete This Task?')){
     await sandbox.delete('Gwen/todos'+ id)
-    ProxyState.todos = ProxyState.todos.filter(t => t.id !=id)
+    ProxyState.todos = ProxyState.todos.filter(i => i.id !=id)
     }
   }
 }
