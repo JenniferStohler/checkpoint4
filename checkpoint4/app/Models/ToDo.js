@@ -20,8 +20,15 @@ export default class ToDo {
     
       get Template() {
         return  `
-         <div class ="col-12 my-2"><input type="checkbox" aria-label="Task Checkbox" class="action cursor" id="todo-ck-box" 
-  onclick="app.todosController.completedTodo('${this.id}')" 
+        <form class="d-flex p-2" onsubmit="app.tasksController.addTask('${this.id}')">
+        <input type="text" name="name" id="name" class="form-control" placeholder="Add Task Here..."
+            aria-describedby="helpId" required minlength="3" maxlength="50">
+            
+        <button type="submit" class="btn btn-success ml-2" title='add task here'><i class="fas fa-plus-circle"></i></button>
+    </form>
+        <div class="col-md-4">
+         <input type="checkbox" aria-label="ToDo Checkbox" class="action cursor" id="todo-ck-box" 
+  onsubmit="app.todosController.completeTodo('${this.id}')" 
   ${this.completed ? 'checked' : ''}>
   ${this.description} <i class="fas fa-times ml-3 text-danger" title='Delete Your ToDo'
   onclick="app.todosController.deleteTodo('${this.id}')"

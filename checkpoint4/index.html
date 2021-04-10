@@ -30,10 +30,17 @@
         <div class="col-md-4"></div>
         <div class="col-md-4"> 
             <div id="TODOS"></div>
-                <form class="d-flex" onsubmit="app.toDosController.addToDo()">
-                    <input class="w-100 rounded" type="text" id="description" placeholder="List Name...">
-                        <button class="btn btn-success ml-1" type="submit">+</button>
-                </form>
+            <form class="bg-white rounded p-3" onsubmit="app.toDosController.addToDo()">
+                <div class="form-group d-flex">
+                    <label for="name">TODO</label>
+                </div>
+                <input type="text" name="name" id="description" class="form-control" placeholder="Add Task..."
+                aria-describedby="helpId" required minlength="3" maxlength="15">
+                <div class="ml-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-success" title='add task'>+</i></button>
+                </div>
+              
+            </form>
         </div>
     </div>
         

@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js";
-import { todoService } from "../Services/ToDoService.js";
+import { todosService } from "../Services/ToDosService.js";
 
 
 
@@ -9,21 +9,24 @@ import { todoService } from "../Services/ToDoService.js";
 //Private
 function _draw() {
   let todo = ProxyState.todos;
+  let todosTotal = ProxyState.todos.length 
+  let todosIncomplete = ProxyState.todos.filter(t => t.completed == false).length
   let template = ''
+  template += `<p>${todosIncomplete}/${todosTotal}</p>`
   if (todo.length == 0) {
     template += '<div class="col text-center"><p><em>no list</em><p></div>'
   }
-  todo.forEach(l => template += l.Template)
+  todo.forEach(t => template += t.Template)
   document.getElementById("TODOS").innerHTML = template
 } 
 
 //Public
-export default class ToDoController {
+export default class ToDosController {
   constructor() {
     ProxyState.on("todos", _draw);
   
 
-    _draw()
+    
   }
 
   addToDo() {
@@ -33,23 +36,23 @@ export default class ToDoController {
       description: form.description.value
     
     }
-    todoService.addToDo(newtoDo)
+    todosService.addToDo(newtoDo)
     // @ts-ignore
     form.reset()
   }
   async getTodos(){
     try {
-      await toDoService.getTodos()
+      await toDosService.getTodos()
     } catch (error) {
       console.error(error);
     }
   }
 
   completeToDo(id){
-    toDoService.completeToDo(id)
+    toDosService.completeTodo(id)
   }
 
   deleteToDo(id) {
-    todoService.deletetoDo(id)
+    toDosService.deleteTodo(id)
   }
 }
