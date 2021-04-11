@@ -5,8 +5,7 @@ class ClockService {
   getClock(){
     let time = setInterval(function(){
       clockTimer(time);
-    
-    }, 1000)
+    }, 1000);
   }
 }
 

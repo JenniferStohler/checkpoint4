@@ -1,11 +1,11 @@
 
 
 export default class ToDo {
-  constructor(data) {
-    this.user = data.user
-    this.id = data.id
-    this.description = data.description
-    this.completed = data.completed
+  constructor({description, user=null, id=null, completed=null}) {
+    this.description = description
+    this.user = user
+    this.id = id
+    this.completed = completed
   }
   
     // //the server will create these properties for you

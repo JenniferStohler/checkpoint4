@@ -6,22 +6,22 @@ import { sandboxApi } from "./AxiosService.js";
 class ToDosService {
 
   constructor(){
-    //console.log("Hello Service!")
+    
   }
    async addToDo(newtoDo) {
      let res = await sandboxApi.post('Gwen/todos', newtoDo)
      let todo = new toDo(res.data)
     ProxyState.todos = [...ProxyState.todos, todo]
-    //console.log("hi")
+    console.log("hi")
   }
   
   
   async getToDos(){
     let res = await sandboxApi.get('Gwen/todos');
-    ProxyState.todos= res.data.map(t => new ToDo(t))
+    ProxyState.todos= res.data.map(t => new toDo(t))
   }
 
-  async completeToDo(id){
+  async completedToDo(id){
     let toDoCheck = ProxyState.todos.find(t => t.id === id)
     if(toDoCheck.completed){
       await sandboxApi.put('Gwen/todos/' + id, {completed: false})
@@ -31,6 +31,10 @@ class ToDosService {
         toDoCheck.completed = true
       }
     ProxyState.todos = ProxyState.todos
+  }
+
+  async deleteAll(){
+    await ProxyState.todos.forEach(todo => { sandboxApi.delete(`Gwen/todos/${todo.id}`)})
   }
 
   

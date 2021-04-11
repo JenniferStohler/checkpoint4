@@ -14,7 +14,7 @@ function _draw() {
   let template = ''
   template += `<p>${todosIncomplete}/${todosTotal}</p>`
   if (todo.length == 0) {
-    template += '<div class="col text-center"><p><em>no list</em><p></div>'
+    template += '<div class="col text-center"><p><em>all Tasks Complete</em><p></div>'
   }
   todo.forEach(t => template += t.Template)
   document.getElementById("todo").innerHTML = template
@@ -24,31 +24,42 @@ function _draw() {
 export default class ToDosController {
   constructor() {
     ProxyState.on("todos", _draw);
+    this.getToDos()
+    
   }
 
   addToDo() {
     window.event.preventDefault();
     let form = window.event.target
     let newtoDo ={
-      description: form.description.value
+      description: form.description.value,
     }
     todosService.addToDo(newtoDo)
     // @ts-ignore
     form.reset()
   }
-  async getTodos(){
+  async getToDos(){
     try {
-      await toDosService.getTodos()
+      await todosService.getToDos()
     } catch (error) {
       console.error(error);
     }
   }
 
+  async deleteAll(){
+    try{
+      await todosService.deleteAll()
+    }catch (error){
+      console.error(error)
+    }
+
+  }
+
   completedToDo(id){
-    toDosService.completedToDo(id)
+    todosService.completedToDo(id)
   }
 
   deleteToDo(id) {
-    toDosService.deleteToDo(id)
+    todosService.deleteToDo(id)
   }
 }

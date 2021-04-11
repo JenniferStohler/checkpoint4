@@ -14,7 +14,7 @@ export default class ClockController {
   }
   async getClock(){
     try{
-      await clockService.getClock()
+       clockService.getClock()
     }catch (error){
       console.error;
     }
