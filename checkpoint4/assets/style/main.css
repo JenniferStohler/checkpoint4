@@ -42,7 +42,14 @@
   box-sizing: border-box;
 }
 
-
+.clock {
+  font-family: 'Roboto', sans-serif;
+  color: #f9faf9;
+  font-size: 56px;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
 html {
   font-family: sans-serif;

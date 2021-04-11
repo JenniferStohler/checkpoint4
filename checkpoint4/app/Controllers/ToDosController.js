@@ -44,11 +44,11 @@ export default class ToDosController {
     }
   }
 
-  completeToDo(id){
-    toDosService.completeTodo(id)
+  completedToDo(id){
+    toDosService.completedToDo(id)
   }
 
   deleteToDo(id) {
-    toDosService.deleteTodo(id)
+    toDosService.deleteToDo(id)
   }
 }

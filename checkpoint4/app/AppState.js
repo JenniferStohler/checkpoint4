@@ -11,6 +11,8 @@ class AppState extends EventEmitter {
 
   images = null
 
+  clock = null
+
   weather = null
 }
 
