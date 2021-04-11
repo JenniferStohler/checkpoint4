@@ -1,22 +1,20 @@
-import { ProxyState } from "../AppState.js";
-import { clockService } from "../Services/ClockService.js";
+// import { ProxyState } from "../AppState.js";
+// import { clockService } from "../Services/ClockService.js";
 
 
-function _drawClock() {
+// export default class ClockController {
+//   constructor(){
+//     _draw()
   
-}
-
-export default class ClockController {
-  constructor(){
-    ProxyState.on('clock', _drawClock())
-    this.getClock()
+//     function time() {
+//       var d = new Date();
+//       var s = d.getSeconds();
+//       var m = d.getMinutes();
+//       var h = d.getHours();
+//       span.textContent = 
+//         ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+//     }
     
-  }
-  async getClock(){
-    try{
-       clockService.getClock()
-    }catch (error){
-      console.error;
-    }
-  }
-}
+//     setInterval(time, 1000);
+//   }
+// }

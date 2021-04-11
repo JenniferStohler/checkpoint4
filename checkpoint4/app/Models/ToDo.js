@@ -25,7 +25,7 @@ export default class ToDo {
   onclick="app.toDosController.completedToDo('${this.id}')" 
   ${this.completed ? 'checked' : ''}>
   ${this.description} <i class="far fa-trash-alt" title='delete'
-  onclick="app.toDosController.deleteToDo('${this.id}')"
+  onclick="app.toDosController.deleteToDo('${this. id}')"
   ></i></div>
   `
 }
