@@ -24,7 +24,7 @@ export default class ToDo {
       <input type="checkbox" aria-label="Checkbox" class="action cursor" id="checkbox" 
   onclick="app.toDosController.completedToDo('${this.id}')" 
   ${this.completed ? 'checked' : ''}>
-  ${this.description} <i class="fas fa-times ml-3 text-danger" title='Delete Your ToDo'
+  ${this.description} <i class="far fa-trash-alt" title='delete'
   onclick="app.toDosController.deleteToDo('${this.id}')"
   ></i></div>
   `

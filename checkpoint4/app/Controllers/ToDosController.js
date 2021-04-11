@@ -14,7 +14,7 @@ function _draw() {
   let template = ''
   template += `<p>${todosIncomplete}/${todosTotal}</p>`
   if (todo.length == 0) {
-    template += '<div class="col text-center"><p><em>all Tasks Complete</em><p></div>'
+    template += '<div class="col text-center"><p><em>All Tasks Complete</em><p></div>'
   }
   todo.forEach(t => template += t.Template)
   document.getElementById("todo").innerHTML = template

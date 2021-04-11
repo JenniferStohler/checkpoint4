@@ -40,9 +40,9 @@ class ToDosService {
   
 
   
-  async deleteToDos(id){
+  async deleteToDo(id){
     if(window.confirm('Are You Sure You Want To Delete This Task?')){
-      await sandbox.delete('Gwen/todos/'+ id)
+      await sandboxApi.delete(`Gwen/todos/${id}`)
       ProxyState.todos = ProxyState.todos.filter(t => t.id !=id)
     }
   }
