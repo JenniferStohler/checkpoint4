@@ -1,4 +1,4 @@
-import ValuesController from "./Controllers/InspiresController.js";
+import ValuesController from "./Controllers/ValuesController.js";
 import ToDosController from "./Controllers/ToDosController.js";
 import ImagesController from "./Controllers/ImagesController.js";
 import WeatherController from "./Controllers/WeatherController.js";

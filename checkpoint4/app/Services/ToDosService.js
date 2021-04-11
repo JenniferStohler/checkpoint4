@@ -4,12 +4,17 @@ import { sandboxApi } from "./AxiosService.js";
 
 
 class ToDosService {
+
+  constructor(){
+    //console.log("Hello Service!")
+  }
    async addToDo(newtoDo) {
      let res = await sandboxApi.post('Gwen/todos', newtoDo)
      let todo = new toDo(res.data)
     ProxyState.todos = [...ProxyState.todos, todo]
-    console.log("hi")
+    //console.log("hi")
   }
+  
   
   async getToDos(){
     let res = await sandboxApi.get('Gwen/todos');
@@ -33,9 +38,9 @@ class ToDosService {
   
   async deleteToDos(id){
     if(window.confirm('Are You Sure You Want To Delete This Task?')){
-    await sandbox.delete('Gwen/todos/'+ id)
-    ProxyState.todos = ProxyState.todos.filter(i => i.id !=id)
-  }
+      await sandbox.delete('Gwen/todos/'+ id)
+      ProxyState.todos = ProxyState.todos.filter(t => t.id !=id)
+    }
   }
 }
 

@@ -8,7 +8,7 @@ function _drawWeather(){
   let toF = (weatherTemp - 32) * 5 / 9;
   let toc = (weatherTemp - 32) * 5 / 9;
 
-    template += /*html */ `<div class="weather-text mt-2 text-center text-light text-shadow" onclick="app.weatherscontroller."><p> ${weatherTemp} </p> 
+    template += /*html */ `<div class="weather-text mt-2 text-center text-light text-shadow" onclick="app.weatherController."><p> ${weatherTemp} </p> 
     
     </div>`
   document.getElementById('weather').innerHTML = template
@@ -25,10 +25,10 @@ export default class WeatherController{
 
 
 async getWeather(){
-  try {
-    await weatherService.getWeather()
-  } catch (error) {
-    console.error(error);
+    try {
+      await weatherService.getWeather()
+    } catch (error) {
+      console.error(error);
+    }
   }
-}
 }

@@ -17,16 +17,13 @@ function _draw() {
     template += '<div class="col text-center"><p><em>no list</em><p></div>'
   }
   todo.forEach(t => template += t.Template)
-  document.getElementById("TODOS").innerHTML = template
+  document.getElementById("todo").innerHTML = template
 } 
 
 //Public
 export default class ToDosController {
   constructor() {
     ProxyState.on("todos", _draw);
-  
-
-    
   }
 
   addToDo() {
@@ -34,7 +31,6 @@ export default class ToDosController {
     let form = window.event.target
     let newtoDo ={
       description: form.description.value
-    
     }
     todosService.addToDo(newtoDo)
     // @ts-ignore

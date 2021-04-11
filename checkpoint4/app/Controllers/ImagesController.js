@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js"
 import { imagesService } from "../Services/ImagesService.js"
 
 function _drawImage(){
-  document.body.style.backgroundImage = `url(${ProxyState.images})`
+  // document.body.style.backgroundImage = `url(${ProxyState.images})`
 }
 
 export default class ImagesController {
@@ -14,8 +14,8 @@ export default class ImagesController {
   async getBackgroundImage(){
     try {
       await imagesService.getBackgroundImage()
-      }catch (error){
+    } catch (error){
       console.error(error);
-      }
     }
   }
+}
