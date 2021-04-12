@@ -52,8 +52,9 @@
 }
 
 .quotes{
-  color:red;
-  font-size: 20px
+  color: white;
+  font-size: 15px;
+  text-align: justify;
 }
 
 .clock {
