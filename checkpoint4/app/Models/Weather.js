@@ -1,18 +1,10 @@
 export default class Weather{
-  constructor({main, data}){
-   this.main = main.temp 
-   this.city = data.name
+  constructor({main, name}){
+   this.main = Number(main.temp)
+   this.city = name
+   this.KtoF =  Math.floor(((this.main - 273.15) * 1.8) + 32)
+
+   this.KtoC = Math.floor(this.main - 273.15)
   }
 
 }
-
-//   get weatherTemplate(){
-//     return `<div id="weather" class="col-md-4">
-//     <h3>${this.weather}${Math.floor(((this.main - 273.15) * 1.8) + 32)}F</h3>
-//     <p>${this.name}</p>
-//     </div>`
-//   }
-// }
-  
- 
- 
