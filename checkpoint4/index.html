@@ -20,20 +20,26 @@
 
     <main id="inspire">
         <div class="row" style="height:30rem">
-            <div id="clock" class=" clock col d-flex justify-content-center align-items-end">
-                
-            </div>
             <div id="weather" class="col-md-4"></div>
+            <div id="clock" class=" clock col-md-12 d-flex justify-content-center align-items-end">
+            </div>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-12"></div>
 
         <div class="row" style="height:30rem">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"> 
+            <div class="col-md-12">
+                <div id="quotes" class="quotes row justify-content-center">
+                        <div class="col">
+                             <p><small<h3><b>Quote goes here</b></h3></small></p>
+                        </div>
+                </div>
+            </div>
+     
+            <div class="col-md-12"> 
                 <div class="col d-flex justify-content-end align-items-end" id="TODO">
                     <div class="task-card shadow bg-dark text-light rounded mb-6">
                         <div class="text-center p-2 d-flex justify-content-between">
+        
                             <div class="d-flex flex-column">
                                 <h3>TODO List</h3>
                                 <p id="toDoCount"></p>
@@ -60,11 +66,6 @@
 
 </body>
 <footer class="container-fluid">
-        <div id="quotes" class="quotes row justify-content-center">
-            <div class="col">
-                <p><small<h3><b>Quote goes here</b></h3></small></p>
-            </div>
-        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
