@@ -1,8 +1,8 @@
 import { ProxyState } from "../AppState.js"
-import { quotesService } from "../Services/ImagesService.js"
+import { quotesService } from "../Services/QuotesService.js"
 
 function _drawQuote(){
-   document.body.style.quote = `url(${ProxyState.quotes})`
+   document.getElementById('quotes').innerHTML = ProxyState.quotes.quoteTemplate
 }
 
 export default class QuotesController {

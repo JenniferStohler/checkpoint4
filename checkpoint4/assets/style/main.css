@@ -42,6 +42,15 @@
   box-sizing: border-box;
 }
 
+.author{
+  color: transparent;
+
+}
+
+.quotes:hover .author {
+  color:black
+}
+
 .clock {
   font-family: 'Roboto', sans-serif;
   color: #f9faf9;
