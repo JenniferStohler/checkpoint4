@@ -14,6 +14,8 @@ class AppState extends EventEmitter {
   clock = null
 
   weather = null
+
+  quotes = null
 }
 
 
