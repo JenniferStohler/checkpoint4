@@ -1,21 +1,28 @@
 
 
-// class ClockService {
+class ClockService {
 
-//   getClock(){
-//     let time = setInterval(function(){
-//       clockTimer(time);
-//     }, 1000);
-//   }
-// }
+timer(){
 
-// function clockTimer(){
-//     var c = new Date(c);
-//     document.getElementById("clock").innerHTML = c.LocaleTimeString;
-//   }
+  let timer = document.getElementById('clock');
+
+  function time() {
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+    timer.innerText = 
+      ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+  }
+
+  
+  setInterval(time, 1000);
+}
+
+}
 
 
 
 
 
-//  export const clockService = new ClockService();
+ export const clockService = new ClockService();

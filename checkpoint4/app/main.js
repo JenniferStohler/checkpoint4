@@ -3,7 +3,7 @@ import ToDosController from "./Controllers/ToDosController.js";
 import ImagesController from "./Controllers/ImagesController.js";
 import WeatherController from "./Controllers/WeatherController.js";
 import QuotesController from "./Controllers/QuotesController.js";
-// import ClockController from "./Controllers/ClockController.js";
+import ClockController from "./Controllers/ClockController.js";
 
 class App {
   valuesController = new ValuesController();
@@ -12,7 +12,7 @@ class App {
 
   imagesController = new ImagesController();
 
-  // clockController = new ClockController();
+  clockController = new ClockController();
 
   weatherController = new WeatherController();
 

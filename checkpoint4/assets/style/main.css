@@ -48,7 +48,12 @@
 }
 
 .quotes:hover .author {
-  color:black
+  color:red
+}
+
+.quotes{
+  color:red;
+  font-size: 20px
 }
 
 .clock {
