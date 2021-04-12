@@ -18,18 +18,8 @@ class WeatherService{
 
   
   }
-
-  getTemp(checked){
-    let weather = ProxyState.weather
-    let toCelsius = Math.round(weather - 273.15)
-    let toFarenheit = Math.round(((weather - 273.15) * 1.8) + 32)
-
-    if (ProxyState.weather != checked){
-      toFarenheit
-    }else{
-      toCelsius
-    }
-  }
 }
+
+ 
 
 export const weatherService = new WeatherService();
